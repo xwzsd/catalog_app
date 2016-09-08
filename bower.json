@@ -1,0 +1,9 @@
+{
+  "name": "catalog_app",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "lodash": "~2.4.1"
+  }
+}
