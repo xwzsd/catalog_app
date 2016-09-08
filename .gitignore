@@ -19,6 +19,11 @@
 /public/assets
 /webpack-assets.json
 /webpack-assets-deploy.json
+typings
+
+# Compiled
+public/wassets/
+frontend/webpack-assets.json
 
 # Игнорирование прочих ненужных файлов.
 database.yml
