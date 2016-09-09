@@ -1,31 +1,37 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es5",
     "module": "commonjs",
-    "removeComments": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noEmitHelpers": false,
-    "sourceMap": true,
-    "noImplicitAny": true
+    "removeComments": false,
+    "noImplicitAny": false
   },
   "files": [
     "./frontend/src/app.ts",
     "./frontend/src/bootstrap.ts",
     "./frontend/src/components.ts",
     "./frontend/src/components/hello/hello.component.ts",
-    "./frontend/src/components/product_create/product_create.component.ts",
-    "./frontend/src/components/product_detail/product_detail.component.ts",
-    "./frontend/src/components/product_form/product_form.component.ts",
-    "./frontend/src/components/products/products.component.ts",
+    "./frontend/src/components/category_detail/category_detail.component.ts",
+    "./frontend/src/components/category_form/category_form.component.ts",
+    "./frontend/src/components/categories/categories.component.ts",
+    "./frontend/src/components/item_detail/item_detail.component.ts",
+    "./frontend/src/components/item_form/item_form.component.ts",
+    "./frontend/src/components/items/items.component.ts",
     "./frontend/src/development.ts",
     "./frontend/src/models.ts",
-    "./frontend/src/models/product.ts",
+    "./frontend/src/models/category.ts",
+    "./frontend/src/models/item.ts",
     "./frontend/src/pipes.ts",
     "./frontend/src/services.ts",
-    "./frontend/src/services/product.service.ts",
+    "./frontend/src/services/category.service.ts",
+    "./frontend/src/services/item.service.ts",
     "./frontend/src/validators.ts",
-    "./frontend/src/vendor.ts"
+    "./frontend/src/vendor.ts",
+    "typings/main.d.ts",
+    "typings/browser.d.ts"
   ],
   "filesGlob": [
     "./frontend/src/**/*.ts",
@@ -49,5 +55,9 @@
   "atom": {
     "rewriteTsconfig": true
   },
-  "exclude": []
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
 }

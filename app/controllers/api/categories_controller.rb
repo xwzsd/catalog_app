@@ -1,29 +1,32 @@
 class Api::CategoriesController < ApplicationController
-  load_resource
 
   def index
-    respond_with @categories
+    @categories = Category
+    .all
+    .page(params[:page])
+    .per(10)
   end
 
   def show
-    respond_with @category
-  end
-
-  def create
-    respond_with :api, categories.create(category_params)
+    @category = Category.find(params[:id])
   end
 
   def update
-    respond_with @category.update(category_params)
-  end
+    @category = Category.find(params[:id])
+      if @category.update(category_params)
+        render :show
+      else
 
-  def destroy
-    respond_with @category.destroy
+      render json: { error_messages: ["wrong"] }, status: 500
+    end
   end
 
   private
 
   def category_params
-    params.permit(:id, :name, :alias)
+      ActionController::Parameters
+      .new(JSON.parse(request.body.read))
+      .require(:category)
+      .permit(Category::PERMITTED_ATTRIBUTES)
   end
 end

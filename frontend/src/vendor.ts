@@ -1,19 +1,16 @@
-//*********************
-// polyfills
-//*********************
-
-import 'es6-shim';
-import 'es6-promise';
-// (these modules are what is in 'angular2/bundles/angular2-polyfills' so don't use that here)
+ // *********************
+ // polyfills
+ // *********************
+ // (these modules are what is in 'angular2/bundles/angular2-polyfills' so don't use that here)
 import 'es7-reflect-metadata/dist/browser';
 import 'zone.js/lib/browser/zone-microtask';
 
-// in Production you may want to remove this
+ // in Production you may want to remove this
 import 'zone.js/lib/browser/long-stack-trace-zone';
 
 (<any>global).__extends = (this && this.__extends) || function (d?: any, b?: any) {
-  for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-  var __: any = function() { this.constructor = d; };
+  for (let p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+  let __: any = function() { this.constructor = d; };
   d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 
@@ -34,7 +31,7 @@ import 'zone.js/lib/browser/long-stack-trace-zone';
       function onfulfill(value?: any) { try { step('next', value); } catch (e) { reject(e); } }
       function onreject(value?: any) { try { step('throw', value); } catch (e) { reject(e); } }
       function step(verb?: any, value?: any) {
-        var result = generator[verb](value);
+        let result = generator[verb](value);
         result.done ? resolve(result.value) : cast(result.value).then(onfulfill, onreject);
       }
       step('next', void 0);
@@ -42,16 +39,17 @@ import 'zone.js/lib/browser/long-stack-trace-zone';
   };
 
 
-//*********************
-//  vendor
-//*********************
+ // *********************
+ //  vendor
+ // *********************
 
-// Angular 2
+ // Angular 2
 import 'angular2/platform/browser';
 import 'angular2/platform/common_dom';
 import 'angular2/core';
 import 'angular2/router';
 import 'angular2/http';
 
-// RxJS
+
+ // RxJS
 import 'rxjs';

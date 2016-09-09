@@ -8,7 +8,7 @@ Validators
 } from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
 import {ItemFormComponent} from '../../components';
-import {ItemtService} from '../../services';
+import {ItemService} from '../../services';
 import {Item} from '../../models';
 
 const templateUrl = require('./item_detail.html');
@@ -51,7 +51,7 @@ export class ItemDetailComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this._itemtService
+    this._itemService
       .update(this.id, this.item)
       .subscribe(_ => {
         this._router.navigate(['Items']);

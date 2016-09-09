@@ -1,6 +1,12 @@
 /*
  * Providers provided by Angular
  */
+ /// <reference path="../../typings/tsd.d.ts" />
+ /// <reference path="../../typings/typings.d.ts" />
+import 'zone.js';
+import 'reflect-metadata';
+import 'es6-shim';
+import 'es6-promise';
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {FORM_PROVIDERS} from 'angular2/common';
@@ -17,6 +23,11 @@ import {
 import {App} from './app';
 
 // compile when html template has updated
+declare var process: {
+   env: {
+       NODE_ENV: string
+   }
+};
 if (process.env.NODE_ENV === 'development') {
   require('./development');
 }
@@ -41,6 +52,5 @@ const APP_PROVIDERS: Array<any> = [
   ROUTER_PROVIDERS
 ];
 
-// TODO: eventually this would need to be enabled only if we are in production
 enableProdMode();
 bootstrap(App, APP_PROVIDERS);

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'category#index'
+	root 'dashboard#index'
+	
     namespace :api, defaults: {format: :json} do
        resources :categories, only: [:index, :show]
        resources :items, only: [:index, :show]

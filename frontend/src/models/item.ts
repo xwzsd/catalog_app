@@ -2,7 +2,7 @@ export class Item {
   id: number;
   name: string;
   price: number;
-  description: text;
+  description: string;
   createdAt: Date;
   updatedAt: Date;
 

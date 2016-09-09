@@ -1,29 +1,32 @@
 class Api::ItemsController < ApplicationController
-  load_resource
 
-  def index
-    respond_with @items
+ def index
+    @items = Item
+    .all
+    .page(params[:page])
+    .per(100)
   end
 
   def show
-    respond_with @item
-  end
-
-  def create
-    respond_with :api, items.create(item_params)
+    @item = Item.find(params[:id])
   end
 
   def update
-    respond_with @item.update(item_params)
-  end
+    @item = Item.find(params[:id])
+      if @item.update(item_params)
+        render :show
+      else
 
-  def destroy
-    respond_with @item.destroy
+      render json: { error_messages: ["wrong"] }, status: 500
+    end
   end
 
   private
 
   def item_params
-    params.permit(:id, :id_category, :name, :price, :description)
+      ActionController::Parameters
+      .new(JSON.parse(request.body.read))
+      .require(:item)
+      .permit(Item::PERMITTED_ATTRIBUTES)
   end
 end
