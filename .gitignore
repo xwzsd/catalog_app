@@ -14,9 +14,9 @@
 /.ruby-gemset
 /.powenv
 /.env
+/jspm_packages
 /node_modules
 /bower_components
-/jspm_packages
 /typings
 /public/wassets
 /app/assets/javascripts
@@ -35,3 +35,5 @@ doc/
 .DS_Store
 .idea
 .secret
+*.rspec
+*.rvmrc
