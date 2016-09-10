@@ -16,10 +16,12 @@
 /.env
 /node_modules
 /bower_components
-/public/assets
+/jspm_packages
+/typings
+/public/wassets
+/app/assets/javascripts
 /webpack-assets.json
 /webpack-assets-deploy.json
-typings
 
 # Compiled
 public/wassets/
@@ -27,7 +29,6 @@ frontend/webpack-assets.json
 
 # Игнорирование прочих ненужных файлов.
 database.yml
-/app/assets/javascripts
 doc/
 *.swp
 *~
