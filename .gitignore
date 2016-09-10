@@ -14,7 +14,7 @@
 /.ruby-gemset
 /.powenv
 /.env
-/jspm_packages
+/jspm_packages/*
 /node_modules
 /bower_components
 /typings
