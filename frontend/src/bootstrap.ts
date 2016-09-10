@@ -3,10 +3,11 @@
  */
  /// <reference path="../../typings/tsd.d.ts" />
  /// <reference path="../../typings/typings.d.ts" />
-import 'zone.js';
-import 'reflect-metadata';
 import 'es6-shim';
 import 'es6-promise';
+import 'rxjs/Rx';
+import 'zone.js';
+import 'reflect-metadata';
 import {bootstrap} from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {FORM_PROVIDERS} from 'angular2/common';
@@ -51,6 +52,7 @@ const APP_PROVIDERS: Array<any> = [
   FORM_PROVIDERS,
   ROUTER_PROVIDERS
 ];
+
 
 enableProdMode();
 bootstrap(App, APP_PROVIDERS);

@@ -23,22 +23,17 @@ export class ItemService {
 
   fetch(id: string) {
     return this._http
-      .get('/api/items/' + id)
+      .get('/api/item/alias/' + id)
       .map(r => r.json())
       .map(r => {
         return new Item(r);
       });
   }
 
-  create(item: Item) {
-    let param: { item: Item } = { 'item': item };
-    return this._http
-      .post('/api/items/', JSON.stringify(param));
-  }
 
   update(id: string, item: Item) {
     let param: { item: Item } = { 'item': item };
     return this._http
-      .put('/api/items/' + id, JSON.stringify(param));
+      .put('/api/item/alias/' + id, JSON.stringify(param));
   }
 }

@@ -1,5 +1,7 @@
 class Api::CategoriesController < ApplicationController
 
+respond_to :json, :only => [:index, :show, :update]
+
   def index
     @categories = Category
     .all

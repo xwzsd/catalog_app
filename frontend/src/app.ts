@@ -29,10 +29,10 @@ const templateUrl = require('./app.html');
 
 @RouteConfig([
   { path: '/', name: 'Hello', component: HelloComponent },
-  { path: '/categories', name: 'Categories', component: CategoriesComponent },
-  { path: '/categories/:id', name: 'CategoryDetail', component: CategoryDetailComponent },
+  { path: '/category-alias', name: 'Categories', component: CategoriesComponent },
+  { path: '/category-alias/page/:id', name: 'CategoryDetail', component: CategoryDetailComponent },
   { path: '/items', name: 'Items', component: ItemsComponent },
-  { path: '/items/:id', name: 'ItemDetail', component: ItemDetailComponent }
+  { path: '/item/alias/:id', name: 'ItemDetail', component: ItemDetailComponent }
 ])
 
 export class App {

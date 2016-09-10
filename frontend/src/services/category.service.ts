@@ -10,7 +10,7 @@ export class CategoryService {
 
   fetchAll() {
     return this._http
-      .get('/api/categories')
+      .get('/api/category-alias')
       .map(r => r.json())
       .map(r => {
         let results: Array<Category> = [];
@@ -23,22 +23,17 @@ export class CategoryService {
 
   fetch(id: string) {
     return this._http
-      .get('/api/categories/' + id)
+      .get('/api/category-alias/page/' + id)
       .map(r => r.json())
       .map(r => {
         return new Category(r);
       });
   }
 
-  create(category: Category) {
-    let param: { category: Category } = { 'category': category };
-    return this._http
-      .post('/api/categories/', JSON.stringify(param));
-  }
 
   update(id: string, category: Category) {
     let param: { category: Category } = { 'category': category };
     return this._http
-      .put('/api/categories/' + id, JSON.stringify(param));
+      .put('/api/category-alias/page/' + id, JSON.stringify(param));
   }
 }

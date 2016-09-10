@@ -1,4 +1,6 @@
 class Api::ItemsController < ApplicationController
+  
+respond_to :json, :only => [:index, :show, :update]
 
  def index
     @items = Item
